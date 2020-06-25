@@ -2,23 +2,20 @@
   if (typeof window === "undefined") {
     return;
   }
-  var loggingEnabled = true;
+  var loggingEnabled = (typeof sessionStorage !== "undefined") && sessionStorage.getItem("loggingEnabled") === "true";
   (<any>window).Logger = {
     enable: function () {
-      sessionStorage.setItem("loggingEnabled", "true");
+      (typeof sessionStorage !== "undefined") && sessionStorage.setItem("loggingEnabled", "true");
       loggingEnabled = true;
     },
     disable: function () {
-      sessionStorage.removeItem("loggingEnabled");
+      (typeof sessionStorage !== "undefined") && sessionStorage.removeItem("loggingEnabled");
       loggingEnabled = false;
     },
     isEnabled: function () {
       return loggingEnabled;
     }
   };
-  if (sessionStorage.getItem("loggingEnabled") === "true") {
-    loggingEnabled = true;
-  }
 })());
 
 export const Logger = {
