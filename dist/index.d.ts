@@ -1,3 +1,6 @@
+/**
+ * logger-web: A logging utility for the web!
+ */
 export declare const Logger: {
     log: (args?: any) => void;
     info: (args?: any) => void;
