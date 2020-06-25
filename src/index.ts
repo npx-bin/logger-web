@@ -2,7 +2,7 @@
   if (typeof window === "undefined") {
     return;
   }
-  var loggingEnabled = false;
+  var loggingEnabled = true;
   (<any>window).Logger = {
     enable: function () {
       sessionStorage.setItem("loggingEnabled", "true");
