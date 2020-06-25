@@ -5,7 +5,7 @@ exports.Logger = void 0;
     if (typeof window === "undefined") {
         return;
     }
-    var loggingEnabled = false;
+    var loggingEnabled = true;
     window.Logger = {
         enable: function () {
             sessionStorage.setItem("loggingEnabled", "true");
