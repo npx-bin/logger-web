@@ -2,6 +2,9 @@
 exports.__esModule = true;
 exports.Logger = void 0;
 ((function () {
+    if (typeof window === "undefined") {
+        return;
+    }
     var loggingEnabled = false;
     window.Logger = {
         enable: function () {
@@ -22,22 +25,22 @@ exports.Logger = void 0;
 })());
 exports.Logger = {
     log: function (args) {
-        if (window.Logger.isEnabled()) {
+        if (typeof window === "undefined" || window.Logger.isEnabled()) {
             console.log.apply(console, arguments);
         }
     },
     info: function (args) {
-        if (window.Logger.isEnabled()) {
+        if (typeof window === "undefined" || window.Logger.isEnabled()) {
             console.info.apply(console, arguments);
         }
     },
     warn: function (args) {
-        if (window.Logger.isEnabled()) {
+        if (typeof window === "undefined" || window.Logger.isEnabled()) {
             console.warn.apply(console, arguments);
         }
     },
     debug: function (args) {
-        if (window.Logger.isEnabled()) {
+        if (typeof window === "undefined" || window.Logger.isEnabled()) {
             console.debug.apply(console, arguments);
         }
     }
