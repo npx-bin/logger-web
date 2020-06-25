@@ -1,4 +1,7 @@
 ((function () {
+  if (typeof window === "undefined") {
+    return;
+  }
   var loggingEnabled = false;
   (<any>window).Logger = {
     enable: function () {
@@ -20,22 +23,22 @@
 
 export const Logger = {
   log: function (args?) {
-    if ((<any>window).Logger.isEnabled()) {
+    if (typeof window === "undefined" || (<any>window).Logger.isEnabled()) {
       console.log.apply(console, arguments);
     }
   },
   info: function (args?) {
-    if ((<any>window).Logger.isEnabled()) {
+    if (typeof window === "undefined" || (<any>window).Logger.isEnabled()) {
       console.info.apply(console, arguments);
     }
   },
   warn: function (args?) {
-    if ((<any>window).Logger.isEnabled()) {
+    if (typeof window === "undefined" || (<any>window).Logger.isEnabled()) {
       console.warn.apply(console, arguments);
     }
   },
   debug: function (args?) {
-    if ((<any>window).Logger.isEnabled()) {
+    if (typeof window === "undefined" || (<any>window).Logger.isEnabled()) {
       console.debug.apply(console, arguments);
     }
   }
