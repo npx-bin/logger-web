@@ -1,0 +1,23 @@
+{
+  "name": "logger-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "node ./node_modules/typescript/bin/tsc -d --outDir dist src/index.ts"
+  },
+  "keywords": [
+    "logger-web",
+    "console",
+    "log",
+    "debug",
+    "info",
+    "warn"
+  ],
+  "author": "K.C.Ashish Kumar",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^3.9.5"
+  }
+}
