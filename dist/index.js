@@ -5,18 +5,27 @@ exports.Logger = void 0;
     if (typeof window === "undefined") {
         return;
     }
-    var loggingEnabled = (typeof sessionStorage !== "undefined") && sessionStorage.getItem("loggingEnabled") === "true";
+    var key = "loggingEnabled";
+    var loggingEnabled = (typeof sessionStorage !== "undefined") && sessionStorage.getItem(key) === "true";
     window.Logger = {
         enable: function () {
-            (typeof sessionStorage !== "undefined") && sessionStorage.setItem("loggingEnabled", "true");
+            (typeof sessionStorage !== "undefined") && sessionStorage.setItem(key, "true");
             loggingEnabled = true;
         },
         disable: function () {
-            (typeof sessionStorage !== "undefined") && sessionStorage.removeItem("loggingEnabled");
+            (typeof sessionStorage !== "undefined") && sessionStorage.setItem(key, "false");
             loggingEnabled = false;
         },
         isEnabled: function () {
             return loggingEnabled;
+        },
+        value: function () {
+            if (typeof sessionStorage !== "undefined") {
+                return sessionStorage.getItem(key);
+            }
+            else {
+                return "false";
+            }
         }
     };
 })());
@@ -40,5 +49,17 @@ exports.Logger = {
         if (typeof window === "undefined" || window.Logger.isEnabled()) {
             console.debug.apply(console, arguments);
         }
+    },
+    enable: function () {
+        (typeof window !== "undefined") && window.Logger.enable();
+    },
+    disable: function () {
+        (typeof window !== "undefined") && window.Logger.disable();
+    },
+    isEnabled: function () {
+        return (typeof window !== "undefined") ? window.Logger.isEnabled() : false;
+    },
+    value: function () {
+        return (typeof window !== "undefined") ? window.Logger.value() : "false";
     }
 };

@@ -3,4 +3,8 @@ export declare const Logger: {
     info: (args?: any) => void;
     warn: (args?: any) => void;
     debug: (args?: any) => void;
+    enable: () => void;
+    disable: () => void;
+    isEnabled: () => boolean;
+    value: () => string;
 };
