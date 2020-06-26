@@ -53,16 +53,16 @@ var glb = (typeof window !== "undefined") ? window : {};
 
 /*Define & Load Logger Module for Node Environment.*/
 export const Logger = {
-  log: function (args?: any) {
+  log: function (...args: any[]) {
     (<any>glb).Logger.log.apply(null, arguments);
   },
-  info: function (args?: any) {
+  info: function (...args: any[]) {
     (<any>glb).Logger.info.apply(null, arguments);
   },
-  warn: function (args?: any) {
+  warn: function (...args: any[]) {
     (<any>glb).Logger.warn.apply(null, arguments);
   },
-  debug: function (args?: any) {
+  debug: function (...args: any[]) {
     (<any>glb).Logger.debug.apply(null, arguments);
   },
   enable: function () {

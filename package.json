@@ -1,7 +1,7 @@
 {
   "name": "logger-web",
-  "version": "1.5.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "A logging utility for the web!",
   "main": "dist/index.js",
   "scripts": {
     "build": "node ./node_modules/typescript/bin/tsc -d --outDir dist src/index.ts"
@@ -16,7 +16,6 @@
   ],
   "author": "K.C.Ashish Kumar",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
     "typescript": "^3.9.5"
   }

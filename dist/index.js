@@ -54,16 +54,32 @@ var glb = (typeof window !== "undefined") ? window : {};
 })());
 /*Define & Load Logger Module for Node Environment.*/
 exports.Logger = {
-    log: function (args) {
+    log: function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
         glb.Logger.log.apply(null, arguments);
     },
-    info: function (args) {
+    info: function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
         glb.Logger.info.apply(null, arguments);
     },
-    warn: function (args) {
+    warn: function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
         glb.Logger.warn.apply(null, arguments);
     },
-    debug: function (args) {
+    debug: function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
         glb.Logger.debug.apply(null, arguments);
     },
     enable: function () {
