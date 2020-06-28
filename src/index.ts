@@ -7,6 +7,9 @@ var glb = (typeof window !== "undefined") ? window : {};
 
 /*Define & Load Logging Module for Browser Environment.*/
 ((function () {
+  if ((<any>glb).Logger) {
+    return;
+  }
   var key = "loggingEnabled";
   var loggingEnabled = (typeof sessionStorage !== "undefined") && sessionStorage.getItem(key) === "true";
   (<any>glb).Logger = {
