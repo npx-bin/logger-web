@@ -13,6 +13,8 @@ npm i logger-web
 import { Logger } from 'logger-web';
 (or)
 const Logger = require("logger-web").Logger;
+(or)
+const { Logger } = require("logger-web");
 ```
 ```
 Logger.info("some info text . . .");
