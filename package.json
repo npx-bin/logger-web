@@ -1,6 +1,6 @@
 {
   "name": "logger-web",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A logging utility for the web!",
   "main": "dist/index.js",
   "scripts": {
@@ -14,9 +14,13 @@
     "info",
     "warn"
   ],
-  "author": "K.C.Ashish Kumar",
-  "license": "MIT",
   "devDependencies": {
     "typescript": "^3.9.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npx-bin/file-content-replacer.git"
+  },
+  "author": "K.C.Ashish Kumar",
+  "license": "MIT"
 }
