@@ -1,8 +1,9 @@
 {
   "name": "logger-web",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "A logging utility for the web!",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "node ./node_modules/typescript/bin/tsc -d --outDir dist src/index.ts"
   },
